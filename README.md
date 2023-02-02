@@ -20,6 +20,8 @@
 ```
 echo "kubectl get nodes -o wide" > info_nodes.txt  && kubectl get nodes -o wide >> info_nodes.txt && echo -e "\n" >> info_nodes.txt
 ```
+<img width="1230" alt="image" src="https://user-images.githubusercontent.com/117667360/216373687-fddd9fb0-6770-4e29-be4b-3d652cc90a16.png">
+
 * Add detail information about kubemaster node in file info_nodes.txt
 ```
 echo "kubectl describe nodes kubemaster" >> info_nodes.txt  && kubectl describe nodes kubemaster >> info_nodes.txt && echo -e "\n" >> info_nodes.txt
