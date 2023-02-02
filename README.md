@@ -33,3 +33,10 @@ echo "kubectl describe nodes kubenode" >> info_nodes.txt  && kubectl describe no
 * File [info_nodes.txt](https://github.com/rlnq/homework12/blob/main/info_nodes.txt) with information about worker node
 
 ## Step 2: Create a new namespace (all resources below will create in this namespace)
+
+* Create a new namespace:
+```
+kubectl create namespace newkubens
+```
+
+
