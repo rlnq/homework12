@@ -34,7 +34,7 @@ echo "kubectl describe nodes kubenode" >> info_nodes.txt  && kubectl describe no
 
 ## Step 2: Create a new namespace (all resources below will create in this namespace)
 
-* Create a new namespace:
+* Create a new namespace with name 'newkubens':
 ```
 kubectl create namespace newkubens
 ```
