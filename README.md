@@ -38,5 +38,12 @@ echo "kubectl describe nodes kubenode" >> info_nodes.txt  && kubectl describe no
 ```
 kubectl create namespace newkubens
 ```
+* List all namespaces:
+```
+kubectl get ns
+```
+<img width="1232" alt="image" src="https://user-images.githubusercontent.com/117667360/216475311-4cb8131b-e7f7-4912-b6ab-23d5a0d99d89.png">
+
+## Step 3: Prepare deployment.yaml file which will create a Deployment with 3 pods of Nginx or Apache and service for access to these pods via ClusterIP and NodePort. 
 
 
