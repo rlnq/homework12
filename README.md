@@ -28,4 +28,4 @@ echo "kubectl describe nodes kubemaster" >> info_nodes.txt  && kubectl describe 
 ```
 echo "kubectl describe nodes kubenode" >> info_nodes.txt  && kubectl describe nodes kubenode >> info_nodes.txt && echo -e "\n" >> info_nodes.txt
 ```
-
+File [info_nodes.txt](https://github.com/rlnq/homework12/blob/main/info_nodes.txt) with information about worker node
