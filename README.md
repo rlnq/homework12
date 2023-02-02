@@ -14,7 +14,7 @@
 
 5. Prepare Cronjob.yaml file which will test the connection to Nginx or Apache service every 3 minutes.
 
-## Steps:
+## Steps 1: Get information about your worker node and save it in some file
  
 * Get information about nodes and save in file:
 ```
@@ -28,4 +28,6 @@ echo "kubectl describe nodes kubemaster" >> info_nodes.txt  && kubectl describe 
 ```
 echo "kubectl describe nodes kubenode" >> info_nodes.txt  && kubectl describe nodes kubenode >> info_nodes.txt && echo -e "\n" >> info_nodes.txt
 ```
-File [info_nodes.txt](https://github.com/rlnq/homework12/blob/main/info_nodes.txt) with information about worker node
+* File [info_nodes.txt](https://github.com/rlnq/homework12/blob/main/info_nodes.txt) with information about worker node
+
+## Step 2: Create a new namespace (all resources below will create in this namespace)
