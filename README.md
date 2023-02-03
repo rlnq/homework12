@@ -45,6 +45,7 @@ kubectl get ns
 <img width="1232" alt="image" src="https://user-images.githubusercontent.com/117667360/216475311-4cb8131b-e7f7-4912-b6ab-23d5a0d99d89.png">
 
 ## Step 3: Prepare deployment.yaml file which will create a Deployment with 3 pods of Nginx or Apache and service for access to these pods via ClusterIP and NodePort. 
+> * Show the status of deployment, pods and services. Describe all resources which you will create and logs from pods
 
 * Our yaml file [deployment.yaml]() for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
 ```
@@ -63,14 +64,38 @@ kubectl get deployment,pods,services -n newkubens -o wide
 kubectl logs nginx-deployment-866c5d4565-cbzkm -n newkubens
 ```
 <img width="1260" alt="image" src="https://user-images.githubusercontent.com/117667360/216548756-a8e4098d-3c0c-45c2-b249-8078acfe5027.png">
+
 * Logs from second pod:
 ```
 kubectl logs pod/nginx-deployment-866c5d4565-mnr9k -n newkubens
 ```
 <img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216549371-d1d7467b-94d0-4a4a-9e98-bf053f0374f0.png">
+
 * Logs from third pods:
 ```
 kubectl logs pod/nginx-deployment-866c5d4565-zlztk -n newkubens
 ```
 <img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216549465-b6cba538-c26e-4ae3-a79a-d36a54f4de5d.png">
 
+## Step 4: Prepare two job yaml files: One - gets content via curl from an internal port (ClusterIP) and second - get content via curl from an external port (NodePort)
+
+* Run Job file [clusterip.yaml]():
+```
+kubectl apply -f clusterip.yaml
+```
+<img width="754" alt="image" src="https://user-images.githubusercontent.com/117667360/216553441-98b49a3c-f3e6-4dc2-bd6f-90b181f2d9bf.png">
+
+* Get log from job.batch/curl-clusterip-job
+
+```
+kubectl logs job.batch/curl-clusterip-job
+```
+<img width="1258" alt="image" src="https://user-images.githubusercontent.com/117667360/216554308-0fbc80f4-47d5-467f-90c6-16f576d3260e.png">
+
+* Rum Job file [nodeport.yaml]():
+```
+kubectl apply -f nodeport.yaml 
+```
+
+```
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/117667360/216554665-5619e239-a9bb-4b40-9d41-a559cd1130cc.png">
