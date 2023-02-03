@@ -77,7 +77,7 @@ kubectl logs pod/nginx-deployment-866c5d4565-zlztk -n newkubens
 ```
 <img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216549465-b6cba538-c26e-4ae3-a79a-d36a54f4de5d.png">
 
-## Step 4: Prepare two job yaml files: One - gets content via curl from an internal port (ClusterIP) and second - get content via curl from an external port (NodePort)
+## Step 4: Prepare two job yaml files: one - gets content via curl from an internal port (ClusterIP) and second - get content via curl from an external port (NodePort)
 
 * Run Job file [clusterip.yaml]():
 ```
@@ -85,8 +85,7 @@ kubectl apply -f clusterip.yaml
 ```
 <img width="754" alt="image" src="https://user-images.githubusercontent.com/117667360/216553441-98b49a3c-f3e6-4dc2-bd6f-90b181f2d9bf.png">
 
-* Get log from job.batch/curl-clusterip-job
-
+* Get log from job.batch/curl-clusterip-job:
 ```
 kubectl logs job.batch/curl-clusterip-job
 ```
@@ -96,6 +95,12 @@ kubectl logs job.batch/curl-clusterip-job
 ```
 kubectl apply -f nodeport.yaml 
 ```
-
-```
 <img width="640" alt="image" src="https://user-images.githubusercontent.com/117667360/216554665-5619e239-a9bb-4b40-9d41-a559cd1130cc.png">
+
+* Get logs from job.batch/curl-nodeport-job:
+```
+kubectl logs job.batch/curl-nodeport-job
+```
+ps: i don't have external ip!
+<img width="1250" alt="image" src="https://user-images.githubusercontent.com/117667360/216555365-91ade330-5443-4aa3-898a-b0b30d21d7d7.png">
+
