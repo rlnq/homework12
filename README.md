@@ -46,4 +46,17 @@ kubectl get ns
 
 ## Step 3: Prepare deployment.yaml file which will create a Deployment with 3 pods of Nginx or Apache and service for access to these pods via ClusterIP and NodePort. 
 
+Our yaml file [deployment.yaml]() for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
+```
+kubectl apply -f deployment.yaml
+```
+<img width="690" alt="image" src="https://user-images.githubusercontent.com/117667360/216477549-2deeb3f3-fe8c-4a2e-bf7d-264bae2869b5.png">
+
+List all pods in 'newkubens' namespace:
+```
+kubectl get pods -o wide
+```
+<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216478352-2a7091b1-2ec2-44d6-b326-7d9f4374b411.png">
+
+
 
