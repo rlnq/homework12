@@ -91,7 +91,7 @@ kubectl logs job.batch/curl-clusterip-job
 ```
 <img width="1258" alt="image" src="https://user-images.githubusercontent.com/117667360/216554308-0fbc80f4-47d5-467f-90c6-16f576d3260e.png">
 
-* Rum Job file [nodeport.yaml]():
+* Run Job file [nodeport.yaml]():
 ```
 kubectl apply -f nodeport.yaml 
 ```
@@ -104,3 +104,13 @@ kubectl logs job.batch/curl-nodeport-job
 ps: i don't have external ip!
 <img width="1250" alt="image" src="https://user-images.githubusercontent.com/117667360/216555365-91ade330-5443-4aa3-898a-b0b30d21d7d7.png">
 
+Step 5: Prepare Cronjob.yaml file which will test the connection to Nginx service every 3 minutes.
+
+Run CronJob file []():
+```
+kubectl apply -f cronjob.yaml
+```
+<img width="635" alt="image" src="https://user-images.githubusercontent.com/117667360/216557041-c68e0d62-11b8-4228-99bb-29870404d91e.png">
+
+* Get logs from :
+* 
