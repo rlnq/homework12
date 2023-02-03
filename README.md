@@ -46,18 +46,34 @@ kubectl get ns
 
 ## Step 3: Prepare deployment.yaml file which will create a Deployment with 3 pods of Nginx or Apache and service for access to these pods via ClusterIP and NodePort. 
 
-Our yaml file [deployment.yaml]() for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
+* Our yaml file [deployment.yaml]() for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
 ```
 kubectl apply -f deployment.yaml
 ```
 <img width="690" alt="image" src="https://user-images.githubusercontent.com/117667360/216477549-2deeb3f3-fe8c-4a2e-bf7d-264bae2869b5.png">
 
-Switch to 'newkubens' namespace:
+* Switch to 'newkubens' namespace:
 ```
 kubectl config set-context --current --namespace=newkubens
 ```
-Check information about current namespace:
+* Check information about current namespace:
 ```
 kubectl config get-contexts
 ```
-List all nodes
+* List all nodes:
+
+<img width="1254" alt="image" src="https://user-images.githubusercontent.com/117667360/216481105-69d8966c-9c2a-4342-a460-9285bded0653.png">
+
+* Make sure that our pods are created in the namespace we need:
+```
+kubectl get pods -o wide -A | grep newkubens
+```
+<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216482162-94cb742a-af96-4281-aaea-70e0a87d23e5.png">
+
+* List all services in the current namespace 'newkubens' with more details:
+```
+kubectl get service -o wide
+```
+<img width="1244" alt="image" src="https://user-images.githubusercontent.com/117667360/216482601-916aaf1b-eb73-426f-9c81-c99abd2ff27a.png">
+
+
