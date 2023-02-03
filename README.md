@@ -52,20 +52,25 @@ kubectl apply -f deployment.yaml -n newkubens
 ```
 <img width="690" alt="image" src="https://user-images.githubusercontent.com/117667360/216477549-2deeb3f3-fe8c-4a2e-bf7d-264bae2869b5.png">
 
-* List all nodes:
-
-<img width="1254" alt="image" src="https://user-images.githubusercontent.com/117667360/216481105-69d8966c-9c2a-4342-a460-9285bded0653.png">
-
-* Make sure that our pods are created in the namespace we need:
+* List of all status of deployment, pods and services in newkubens namespace with more details:
 ```
-kubectl get pods -o wide -A | grep newkubens
+kubectl get deployment,pods,services -n newkubens -o wide
 ```
-<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216482162-94cb742a-af96-4281-aaea-70e0a87d23e5.png">
+<img width="1257" alt="image" src="https://user-images.githubusercontent.com/117667360/216547736-37040648-3378-4360-a0d7-f7f0500231f9.png">
 
-* List all services in the current namespace 'newkubens' with more details:
+* Logs from first pod:
 ```
-kubectl get service -o wide
+kubectl logs nginx-deployment-866c5d4565-cbzkm -n newkubens
 ```
-<img width="1244" alt="image" src="https://user-images.githubusercontent.com/117667360/216482601-916aaf1b-eb73-426f-9c81-c99abd2ff27a.png">
-
+<img width="1260" alt="image" src="https://user-images.githubusercontent.com/117667360/216548756-a8e4098d-3c0c-45c2-b249-8078acfe5027.png">
+* Logs from second pod:
+```
+kubectl logs pod/nginx-deployment-866c5d4565-mnr9k -n newkubens
+```
+<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216549371-d1d7467b-94d0-4a4a-9e98-bf053f0374f0.png">
+* Logs from third pods:
+```
+kubectl logs pod/nginx-deployment-866c5d4565-zlztk -n newkubens
+```
+<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216549465-b6cba538-c26e-4ae3-a79a-d36a54f4de5d.png">
 
