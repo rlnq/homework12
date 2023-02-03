@@ -52,11 +52,12 @@ kubectl apply -f deployment.yaml
 ```
 <img width="690" alt="image" src="https://user-images.githubusercontent.com/117667360/216477549-2deeb3f3-fe8c-4a2e-bf7d-264bae2869b5.png">
 
-List all pods in 'newkubens' namespace:
+Switch to 'newkubens' namespace:
 ```
-kubectl get pods -o wide
+kubectl config set-context --current --namespace=newkubens
 ```
-<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216478352-2a7091b1-2ec2-44d6-b326-7d9f4374b411.png">
-
-
-
+Check information about current namespace:
+```
+kubectl config get-contexts
+```
+List all nodes
