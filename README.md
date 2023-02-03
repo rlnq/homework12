@@ -48,18 +48,10 @@ kubectl get ns
 
 * Our yaml file [deployment.yaml]() for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
 ```
-kubectl apply -f deployment.yaml
+kubectl apply -f deployment.yaml -n newkubens
 ```
 <img width="690" alt="image" src="https://user-images.githubusercontent.com/117667360/216477549-2deeb3f3-fe8c-4a2e-bf7d-264bae2869b5.png">
 
-* Switch to 'newkubens' namespace:
-```
-kubectl config set-context --current --namespace=newkubens
-```
-* Check information about current namespace:
-```
-kubectl config get-contexts
-```
 * List all nodes:
 
 <img width="1254" alt="image" src="https://user-images.githubusercontent.com/117667360/216481105-69d8966c-9c2a-4342-a460-9285bded0653.png">
