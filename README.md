@@ -14,7 +14,7 @@
 
 5. Prepare Cronjob.yaml file which will test the connection to Nginx or Apache service every 3 minutes.
 
-## Steps 1: Get information about your worker node and save it in some file
+# Steps 1: Get information about your worker node and save it in some file
  
 * Get information about nodes and save in file:
 ```
@@ -32,7 +32,7 @@ echo "kubectl describe nodes kubenode" >> info_nodes.txt  && kubectl describe no
 ```
 * File [info_nodes.txt](https://github.com/rlnq/homework12/blob/main/info_nodes.txt) with information about worker node
 
-## Step 2: Create a new namespace (all resources below will create in this namespace)
+# Step 2: Create a new namespace (all resources below will create in this namespace)
 
 * Create a new namespace with name 'newkubens':
 ```
@@ -44,7 +44,7 @@ kubectl get ns
 ```
 <img width="1232" alt="image" src="https://user-images.githubusercontent.com/117667360/216475311-4cb8131b-e7f7-4912-b6ab-23d5a0d99d89.png">
 
-## Step 3: Prepare deployment.yaml file which will create a Deployment with 3 pods of Nginx or Apache and service for access to these pods via ClusterIP and NodePort. 
+# Step 3: Prepare deployment.yaml file which will create a Deployment with 3 pods of Nginx or Apache and service for access to these pods via ClusterIP and NodePort. 
 > * Show the status of deployment, pods and services. Describe all resources which you will create and logs from pods
 
 * Our yaml file [deployment.yaml]() for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
@@ -77,7 +77,7 @@ kubectl logs pod/nginx-deployment-866c5d4565-zlztk -n newkubens
 ```
 <img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216549465-b6cba538-c26e-4ae3-a79a-d36a54f4de5d.png">
 
-## Step 4: Prepare two job yaml files: one - gets content via curl from an internal port (ClusterIP) and second - get content via curl from an external port (NodePort)
+# Step 4: Prepare two job yaml files: one - gets content via curl from an internal port (ClusterIP) and second - get content via curl from an external port (NodePort)
 
 * Run Job file [clusterip.yaml]():
 ```
@@ -104,7 +104,7 @@ kubectl logs job.batch/curl-nodeport-job
 ps: i don't have external ip!
 <img width="1250" alt="image" src="https://user-images.githubusercontent.com/117667360/216555365-91ade330-5443-4aa3-898a-b0b30d21d7d7.png">
 
-Step 5: Prepare Cronjob.yaml file which will test the connection to Nginx service every 3 minutes.
+# Step 5: Prepare Cronjob.yaml file which will test the connection to Nginx service every 3 minutes.
 
 Run CronJob file []():
 ```
@@ -112,5 +112,3 @@ kubectl apply -f cronjob.yaml
 ```
 <img width="635" alt="image" src="https://user-images.githubusercontent.com/117667360/216557041-c68e0d62-11b8-4228-99bb-29870404d91e.png">
 
-* Get logs from :
-* 
