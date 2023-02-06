@@ -71,17 +71,16 @@ kubectl describe deployment nginx-deployment -n newkubens
 ```
 kubectl apply -f clusterip.yaml -n newkubens
 ```
-
 * Get log from job.batch/curl-clusterip-job:
 ```
 kubectl logs job.batch/curl-clusterip-job
 ```
+<img width="1237" alt="image" src="https://user-images.githubusercontent.com/117667360/216920854-29891806-096d-4eef-b82f-189098421937.png">
 
 * Run Job file [nodeport.yaml]():
 ```
 kubectl apply -f nodeport.yaml -n newkubens
 ```
-
 * Get logs from job.batch/curl-nodeport-job:
 ```
 kubectl logs job.batch/curl-nodeport-job
