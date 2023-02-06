@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: curl-nodeport-job
+  namespace: newkubens
+spec:
+  template:
+    spec:
+      containers:
+      - name: curl
+        image: curlimages/curl
+        command: ['curl', '10.101.190.195:30010']
+      restartPolicy: OnFailure
+  backoffLimit: 4

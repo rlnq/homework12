@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: curl-clusterip-job
+  namespace: newkubens
+spec:
+  template:
+    spec:
+      containers:
+      - name: curl
+        image: curlimages/curl
+        command: ['curl', '10.107.231.92']
+      restartPolicy: OnFailure
+  backoffLimit: 4
