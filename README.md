@@ -85,14 +85,7 @@ kubectl apply -f nodeport.yaml -n newkubens
 ```
 kubectl logs job.batch/curl-nodeport-job
 ```
-<img width="1250" alt="image" src="https://user-images.githubusercontent.com/117667360/216555365-91ade330-5443-4aa3-898a-b0b30d21d7d7.png">
-
-* List of deployment, pods and services:
-```
-kubectl get deployment,pods,services -n newkubens -o wide
-```
-<img width="1253" alt="image" src="https://user-images.githubusercontent.com/117667360/216918021-431675ba-5ff4-4935-b26c-8cd7dd5cc214.png">
-
+<img width="1253" alt="image" src="https://user-images.githubusercontent.com/117667360/217037000-5eea64a4-5658-4d6e-9c54-c488560de778.png">
 
 # Step 5: Prepare Cronjob.yaml file which will test the connection to Nginx service every 3 minutes.
 
