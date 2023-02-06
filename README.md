@@ -89,10 +89,16 @@ kubectl logs job.batch/curl-nodeport-job
 
 # Step 5: Prepare Cronjob.yaml file which will test the connection to Nginx service every 3 minutes.
 
-Run CronJob file []():
+* Run CronJob file []():
 ```
 kubectl apply -f cronjob.yaml
 ```
 <img width="1159" alt="image" src="https://user-images.githubusercontent.com/117667360/217039467-37afa950-101b-4b92-8200-805c78c6152f.png">
 
+* Get the Cronjob description:
+```
+kubectl describe cronjob nginx-cronjob
+```
+<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/217041266-33441bd4-188d-46c5-89ae-a367db3db885.png">
 
+kubectl apply -f clusterip.yaml -n newkubens
