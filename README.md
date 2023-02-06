@@ -30,7 +30,7 @@ echo "kubectl describe nodes kubemaster" >> info_nodes.txt  && kubectl describe 
 ```
 echo "kubectl describe nodes kubenode" >> info_nodes.txt  && kubectl describe nodes kubenode >> info_nodes.txt && echo -e "\n" >> info_nodes.txt
 ```
-* File [info_nodes.txt](https://github.com/rlnq/homework12/blob/main/info_nodes.txt) with information about worker node
+* File [info_nodes.txt](https://github.com/rlnq/k8s/blob/main/info_nodes.txt) with information about worker node
 
 # Step 2: Create a new namespace (all resources below will create in this namespace)
 
@@ -47,7 +47,7 @@ kubectl get ns newkubens
 # Step 3: Prepare deployment.yaml file which will create a Deployment with 3 pods of Nginx or Apache and service for access to these pods via ClusterIP and NodePort. 
 > Show the status of deployment, pods and services. Describe all resources which you will create and logs from pods
 
-* Our yaml file [deployment.yaml]() for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
+* yaml file [deployment.yaml](https://github.com/rlnq/k8s/blob/main/deployment.yaml) for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
 ```
 kubectl apply -f deployment.yaml -n newkubens
 ```
@@ -67,7 +67,7 @@ kubectl describe deployment nginx-deployment -n newkubens
 
 # Step 4: Prepare two job yaml files: one - gets content via curl from an internal port (ClusterIP) and second - get content via curl from an external port (NodePort)
 
-* Run Job file [clusterip.yaml]():
+* Run Job file [clusterip.yaml](https://github.com/rlnq/k8s/blob/main/clusterip.yaml):
 ```
 kubectl apply -f clusterip.yaml -n newkubens
 ```
@@ -77,7 +77,7 @@ kubectl logs job.batch/curl-clusterip-job
 ```
 <img width="1237" alt="image" src="https://user-images.githubusercontent.com/117667360/216920854-29891806-096d-4eef-b82f-189098421937.png">
 
-* Run Job file [nodeport.yaml]():
+* Run Job file [nodeport.yaml](https://github.com/rlnq/k8s/blob/main/nodeport.yaml):
 ```
 kubectl apply -f nodeport.yaml -n newkubens
 ```
@@ -89,7 +89,7 @@ kubectl logs job.batch/curl-nodeport-job
 
 # Step 5: Prepare Cronjob.yaml file which will test the connection to Nginx service every 3 minutes.
 
-* Run CronJob file []():
+* Run CronJob file [CronJob](https://github.com/rlnq/k8s/blob/main/cronjob.yaml):
 ```
 kubectl apply -f cronjob.yaml -n newkubens
 ```
