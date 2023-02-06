@@ -40,18 +40,43 @@ kubectl create namespace newkubens
 ```
 * List all namespaces:
 ```
-kubectl get ns
+kubectl get ns newkubens
 ```
-<img width="1232" alt="image" src="https://user-images.githubusercontent.com/117667360/216475311-4cb8131b-e7f7-4912-b6ab-23d5a0d99d89.png">
+<img width="510" alt="image" src="https://user-images.githubusercontent.com/117667360/216914471-9f8b32b3-1323-4943-94c8-1c5d824937f0.png">
 
 # Step 3: Prepare deployment.yaml file which will create a Deployment with 3 pods of Nginx or Apache and service for access to these pods via ClusterIP and NodePort. 
-> * Show the status of deployment, pods and services. Describe all resources which you will create and logs from pods
+> Show the status of deployment, pods and services. Describe all resources which you will create and logs from pods
 
 * Our yaml file [deployment.yaml]() for creation Deployment with 3 pods of Nginx and service for access to these pods via ClusterIP and NodePort.
 ```
 kubectl apply -f deployment.yaml -n newkubens
 ```
-<img width="690" alt="image" src="https://user-images.githubusercontent.com/117667360/216477549-2deeb3f3-fe8c-4a2e-bf7d-264bae2869b5.png">
+<img width="738" alt="image" src="https://user-images.githubusercontent.com/117667360/216915540-15fd732f-4f67-4d41-8016-541644d2817d.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * List of all status of deployment, pods and services in newkubens namespace with more details:
 ```
