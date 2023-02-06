@@ -91,7 +91,7 @@ kubectl logs job.batch/curl-nodeport-job
 
 * Run CronJob file []():
 ```
-kubectl apply -f cronjob.yaml
+kubectl apply -f cronjob.yaml -n newkubens
 ```
 <img width="1159" alt="image" src="https://user-images.githubusercontent.com/117667360/217039467-37afa950-101b-4b92-8200-805c78c6152f.png">
 
@@ -100,5 +100,3 @@ kubectl apply -f cronjob.yaml
 kubectl describe cronjob nginx-cronjob
 ```
 <img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/217041266-33441bd4-188d-46c5-89ae-a367db3db885.png">
-
-kubectl apply -f clusterip.yaml -n newkubens
