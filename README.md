@@ -93,5 +93,6 @@ Run CronJob file []():
 ```
 kubectl apply -f cronjob.yaml
 ```
-<img width="635" alt="image" src="https://user-images.githubusercontent.com/117667360/216557041-c68e0d62-11b8-4228-99bb-29870404d91e.png">
+<img width="1159" alt="image" src="https://user-images.githubusercontent.com/117667360/217039467-37afa950-101b-4b92-8200-805c78c6152f.png">
+
 
