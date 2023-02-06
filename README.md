@@ -53,81 +53,47 @@ kubectl apply -f deployment.yaml -n newkubens
 ```
 <img width="738" alt="image" src="https://user-images.githubusercontent.com/117667360/216915540-15fd732f-4f67-4d41-8016-541644d2817d.png">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* List of all status of deployment, pods and services in newkubens namespace with more details:
+* Verify the deployment in newkubens namespace with more details:
 ```
-kubectl get deployment,pods,services -n newkubens -o wide
+kubectl get deployment -n newkubens -o wide
 ```
-<img width="1257" alt="image" src="https://user-images.githubusercontent.com/117667360/216547736-37040648-3378-4360-a0d7-f7f0500231f9.png">
+<img width="840" alt="image" src="https://user-images.githubusercontent.com/117667360/216916341-1e720f85-42f6-41d3-80cf-1a29e8393c09.png">
 
-* Logs from first pod:
+* Describe the deployment:
 ```
-kubectl logs nginx-deployment-866c5d4565-cbzkm -n newkubens
+kubectl describe deployment nginx-deployment -n newkubens
 ```
-<img width="1260" alt="image" src="https://user-images.githubusercontent.com/117667360/216548756-a8e4098d-3c0c-45c2-b249-8078acfe5027.png">
-
-* Logs from second pod:
-```
-kubectl logs pod/nginx-deployment-866c5d4565-mnr9k -n newkubens
-```
-<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216549371-d1d7467b-94d0-4a4a-9e98-bf053f0374f0.png">
-
-* Logs from third pods:
-```
-kubectl logs pod/nginx-deployment-866c5d4565-zlztk -n newkubens
-```
-<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216549465-b6cba538-c26e-4ae3-a79a-d36a54f4de5d.png">
+<img width="1259" alt="image" src="https://user-images.githubusercontent.com/117667360/216916723-55912974-5296-493d-944f-dab2c4dc18eb.png">
 
 # Step 4: Prepare two job yaml files: one - gets content via curl from an internal port (ClusterIP) and second - get content via curl from an external port (NodePort)
 
 * Run Job file [clusterip.yaml]():
 ```
-kubectl apply -f clusterip.yaml
+kubectl apply -f clusterip.yaml -n newkubens
 ```
-<img width="754" alt="image" src="https://user-images.githubusercontent.com/117667360/216553441-98b49a3c-f3e6-4dc2-bd6f-90b181f2d9bf.png">
 
 * Get log from job.batch/curl-clusterip-job:
 ```
 kubectl logs job.batch/curl-clusterip-job
 ```
-<img width="1258" alt="image" src="https://user-images.githubusercontent.com/117667360/216554308-0fbc80f4-47d5-467f-90c6-16f576d3260e.png">
 
 * Run Job file [nodeport.yaml]():
 ```
-kubectl apply -f nodeport.yaml 
+kubectl apply -f nodeport.yaml -n newkubens
 ```
-<img width="640" alt="image" src="https://user-images.githubusercontent.com/117667360/216554665-5619e239-a9bb-4b40-9d41-a559cd1130cc.png">
 
 * Get logs from job.batch/curl-nodeport-job:
 ```
 kubectl logs job.batch/curl-nodeport-job
 ```
-ps: i don't have external ip!
 <img width="1250" alt="image" src="https://user-images.githubusercontent.com/117667360/216555365-91ade330-5443-4aa3-898a-b0b30d21d7d7.png">
+
+* List of deployment, pods and services:
+```
+kubectl get deployment,pods,services -n newkubens -o wide
+```
+<img width="1253" alt="image" src="https://user-images.githubusercontent.com/117667360/216918021-431675ba-5ff4-4935-b26c-8cd7dd5cc214.png">
+
 
 # Step 5: Prepare Cronjob.yaml file which will test the connection to Nginx service every 3 minutes.
 
